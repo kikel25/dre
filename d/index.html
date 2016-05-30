@@ -60,7 +60,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 		      var lon=$("#obtLongitud").val();
 		      $.ajax({
 		          type:"POST",
-		          url:"http://iscmoviles.890m.com/guardar.php",
+		          url:"http://moviles2016.esy.es//guardar.php",
 		          data:"nombre="+nom+"&dir="+dir+"&Rfc="+rfc+"&tel="+tel+"&classif="+clasif+"&lat="+lat+"&long="+lon,
 		          success: guardandoServicios
 		      });
@@ -86,7 +86,7 @@ function uploadPhoto(foto) {
 	options.params = params;
 
 	var ft = new FileTransfer();
-	ft.upload(foto,"http://iscmoviles.890m.com/subirArchivo.php",function(r){
+	ft.upload(foto,"http://moviles2016.esy.es/subirArchivo.php",function(r){
 		navigator.notification.confirm("El archivo: "+r.response,null, "Notificacion");
 	}, function(err){
 		navigator.notification.alert("Error: "+err.code+" detalle: "+err.response,null, "Error de Envío");
@@ -126,7 +126,7 @@ function obtenerUbicacion(){//Funcion que obtiene la Ubicación del dispositivo 
 function obtenerMarcas(){
 	      $.ajax({
 		        type:"POST",
-		        url:"http://iscmoviles.890m.com/consultar.php",
+		        url:"http://moviles2016.esy.es/consultar.php",
 		        data:"",
 		        success: serviciosConsultados
 	      });
